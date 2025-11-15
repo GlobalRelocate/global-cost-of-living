@@ -3,8 +3,12 @@ import os
 import subprocess
 from pathlib import Path
 
-DATA_DIR = Path("data")
+# --- ABSOLUTE PATH ---
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = PROJECT_ROOT / "data"
 CSV_TARGET = DATA_DIR / "cost-of-living_v2.csv"
+# ---------------------
+
 KAGGLE_DS = "mvieira101/global-cost-of-living"
 
 def main():

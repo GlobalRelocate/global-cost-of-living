@@ -56,6 +56,23 @@ Interactive API documentation is available at:
 
 ### Endpoints
 
+#### Live Check
+
+```
+GET /
+```
+
+Returns the API live status.
+
+**Response:**
+
+```json
+{
+  "message": "Global Cost of Living API is live!",
+  "status": "ready"
+}
+```
+
 #### Health Check
 
 ```

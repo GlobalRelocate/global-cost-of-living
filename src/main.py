@@ -3,6 +3,7 @@ from fastapi import FastAPI, Request, HTTPException
 import pandas as pd
 import os
 import numpy as np
+from pathlib import Path
 
 app = FastAPI(
     title="Global Cost of Living API",
@@ -13,7 +14,10 @@ app = FastAPI(
 # -------------------------------
 # CONFIG
 # -------------------------------
-CSV_PATH = "../data/cost-of-living_v2.csv"   # relative to project root
+# --- ABSOLUTE PATH FIX ---
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+CSV_PATH = PROJECT_ROOT / "data" / "cost-of-living_v2.csv"
+# --------------------------------
 
 # Human-readable column names
 COLUMN_MAP = {
