@@ -156,6 +156,8 @@ async def get_city_data(request: Request):
     body = await request.json()
 
     city = body.get("city")
+    if city:
+        city = city.replace("-", " ")
     country = body.get("country")
 
     # Validate inputs
